@@ -1,22 +1,41 @@
 #include <iostream>
 #include "BuilderDemo.h"
-#include "CharacterDirector.h"
-#include "WarriorBuilder.h"
-#include "MageBuilder.h"
+#include "CharacterBuilder.h"
+#include "CharacterPresets.h"
 
 namespace builder_demo {
     void run() {
-        CharacterDirector director;
-        WarriorBuilder warriorBuilder;
-        MageBuilder mageBuilder;
+        Character warrior = presets::warrior().build();
 
-        Character noviceWarrior = director.createNoviceCharacter(warriorBuilder);
-        Character eliteMage = director.createEliteCharacter(mageBuilder);
+        Character customMage = presets::mage()
+            .setName("Aeris")
+            .setLevel(12)
+            .addSkill("Ice Storm")
+            .build();
 
-        std::cout << "=== Novice Warrior ===\n";
-        noviceWarrior.print();
+        Character customRogue = CharacterBuilder{}
+            .setName("Valeera")
+            .setClassType("Rogue")
+            .setLevel(8)
+            .setHealth(120)
+            .setMana(40)
+            .setStrength(11)
+            .setAgility(19)
+            .setIntelligence(9)
+            .setArmor(7)
+            .addEquipment("Daggers")
+            .addEquipment("Leather Hood")
+            .addSkill("Backstab")
+            .addSkill("Stealth")
+            .build();
 
-        std::cout << "\n=== Elite Mage ===\n";
-        eliteMage.print();
+        std::cout << "=== Warrior Preset ===\n";
+        warrior.print();
+
+        std::cout << "\n=== Customized Mage ===\n";
+        customMage.print();
+
+        std::cout << "\n=== Fully Custom Rogue ===\n";
+        customRogue.print();
     }
 }

@@ -19,14 +19,14 @@
     <Filter Include="prototype_demo">
       <UniqueIdentifier>{529b8ba6-3a6f-4e0e-851b-c0e5235d0bb1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="builder_demo\director">
-      <UniqueIdentifier>{987dd83e-3713-4df4-b79f-34af3d799742}</UniqueIdentifier>
-    </Filter>
     <Filter Include="builder_demo\builder">
       <UniqueIdentifier>{728f3c44-afe4-4128-9edd-b61cb33ebe6b}</UniqueIdentifier>
     </Filter>
     <Filter Include="builder_demo\product">
       <UniqueIdentifier>{a44a660c-0ec2-471e-8937-175d23774b8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="builder_demo\preset">
+      <UniqueIdentifier>{338a7ca2-5cdf-45fe-9304-b20fba32a6eb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -35,15 +35,6 @@
     </ClCompile>
     <ClCompile Include="Character.cpp">
       <Filter>builder_demo\product</Filter>
-    </ClCompile>
-    <ClCompile Include="WarriorBuilder.cpp">
-      <Filter>builder_demo\builder</Filter>
-    </ClCompile>
-    <ClCompile Include="MageBuilder.cpp">
-      <Filter>builder_demo\builder</Filter>
-    </ClCompile>
-    <ClCompile Include="CharacterDirector.cpp">
-      <Filter>builder_demo\director</Filter>
     </ClCompile>
     <ClCompile Include="BuilderDemo.cpp">
       <Filter>builder_demo</Filter>
@@ -57,6 +48,12 @@
     <ClCompile Include="Troll.cpp">
       <Filter>prototype_demo</Filter>
     </ClCompile>
+    <ClCompile Include="CharacterBuilder.cpp">
+      <Filter>builder_demo\builder</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterPresets.cpp">
+      <Filter>builder_demo\preset</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h">
@@ -64,15 +61,6 @@
     </ClInclude>
     <ClInclude Include="CharacterBuilder.h">
       <Filter>builder_demo\builder</Filter>
-    </ClInclude>
-    <ClInclude Include="WarriorBuilder.h">
-      <Filter>builder_demo\builder</Filter>
-    </ClInclude>
-    <ClInclude Include="MageBuilder.h">
-      <Filter>builder_demo\builder</Filter>
-    </ClInclude>
-    <ClInclude Include="CharacterDirector.h">
-      <Filter>builder_demo\director</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>prototype_demo</Filter>
@@ -106,6 +94,9 @@
     </ClInclude>
     <ClInclude Include="Builder\WarriorBuilder.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterPresets.h">
+      <Filter>builder_demo\preset</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

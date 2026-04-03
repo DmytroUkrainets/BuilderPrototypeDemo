@@ -2,50 +2,6 @@
 #include <iostream>
 
 namespace builder_demo {
-    void Character::setName(const std::string& name) {
-        name_ = name;
-    }
-
-    void Character::setClassType(const std::string& classType) {
-        classType_ = classType;
-    }
-
-    void Character::setLevel(int level) {
-        level_ = level;
-    }
-
-    void Character::setHealth(int health) {
-        health_ = health;
-    }
-
-    void Character::setMana(int mana) {
-        mana_ = mana;
-    }
-
-    void Character::setStrength(int strength) {
-        strength_ = strength;
-    }
-
-    void Character::setAgility(int agility) {
-        agility_ = agility;
-    }
-
-    void Character::setIntelligence(int intelligence) {
-        intelligence_ = intelligence;
-    }
-
-    void Character::setArmor(int armor) {
-        armor_ = armor;
-    }
-
-    void Character::addEquipment(const std::string& item) {
-        equipment_.push_back(item);
-    }
-
-    void Character::addSkill(const std::string& skill) {
-        skills_.push_back(skill);
-    }
-
     void Character::print() const {
         std::cout << "Name: " << name_ << "\n";
         std::cout << "Class: " << classType_ << "\n";

@@ -1,23 +1,45 @@
 #pragma once
 
 #include "Character.h"
+#include <optional>
+#include <string>
+#include <vector>
 
 namespace builder_demo {
     class CharacterBuilder {
     public:
-        virtual ~CharacterBuilder() = default;
+        CharacterBuilder& setName(std::string name);
+        CharacterBuilder& setClassType(std::string classType);
+        CharacterBuilder& setLevel(int level);
 
-        virtual void reset() = 0;
+        CharacterBuilder& setHealth(int health);
+        CharacterBuilder& setMana(int mana);
+        CharacterBuilder& setStrength(int strength);
+        CharacterBuilder& setAgility(int agility);
+        CharacterBuilder& setIntelligence(int intelligence);
+        CharacterBuilder& setArmor(int armor);
 
-        virtual void buildIdentity() = 0;
-        virtual void buildAttributes() = 0;
+        CharacterBuilder& addEquipment(std::string item);
+        CharacterBuilder& addSkill(std::string skill);
 
-        virtual void buildStarterEquipment() = 0;
-        virtual void buildAdvancedEquipment() = 0;
+        Character build() const;
+        void reset();
 
-        virtual void buildBasicSkills() = 0;
-        virtual void buildAdvancedSkills() = 0;
+    private:
+        void validate() const;
 
-        virtual Character getResult() = 0;
+        std::optional<std::string> name_;
+        std::optional<std::string> classType_;
+        std::optional<int> level_;
+
+        std::optional<int> health_;
+        std::optional<int> mana_;
+        std::optional<int> strength_;
+        std::optional<int> agility_;
+        std::optional<int> intelligence_;
+        std::optional<int> armor_;
+
+        std::vector<std::string> equipment_;
+        std::vector<std::string> skills_;
     };
 }

@@ -4,22 +4,12 @@
 #include <vector>
 
 namespace builder_demo {
+    class CharacterBuilder;
+
     class Character {
+        friend class CharacterBuilder;
+
     public:
-        void setName(const std::string& name);
-        void setClassType(const std::string& classType);
-        void setLevel(int level);
-
-        void setHealth(int health);
-        void setMana(int mana);
-        void setStrength(int strength);
-        void setAgility(int agility);
-        void setIntelligence(int intelligence);
-        void setArmor(int armor);
-
-        void addEquipment(const std::string& item);
-        void addSkill(const std::string& skill);
-
         void print() const;
 
     private:
