@@ -2,24 +2,62 @@
 #include <iostream>
 
 namespace builder_demo {
-    // Sets health of the character
+    void Character::setName(const std::string& name) {
+        name_ = name;
+    }
+
+    void Character::setClassType(const std::string& classType) {
+        classType_ = classType;
+    }
+
+    void Character::setLevel(int level) {
+        level_ = level;
+    }
+
     void Character::setHealth(int health) {
         health_ = health;
     }
 
-    // Sets equipment of the character
+    void Character::setMana(int mana) {
+        mana_ = mana;
+    }
+
+    void Character::setStrength(int strength) {
+        strength_ = strength;
+    }
+
+    void Character::setAgility(int agility) {
+        agility_ = agility;
+    }
+
+    void Character::setIntelligence(int intelligence) {
+        intelligence_ = intelligence;
+    }
+
+    void Character::setArmor(int armor) {
+        armor_ = armor;
+    }
+
     void Character::addEquipment(const std::string& item) {
         equipment_.push_back(item);
     }
 
-    // Sets skills of the character
     void Character::addSkill(const std::string& skill) {
         skills_.push_back(skill);
     }
 
-    // Prints character information to the console
     void Character::print() const {
-        std::cout << "Health: " << health_ << "\n";
+        std::cout << "Name: " << name_ << "\n";
+        std::cout << "Class: " << classType_ << "\n";
+        std::cout << "Level: " << level_ << "\n";
+
+        std::cout << "Attributes:\n";
+        std::cout << " - Health: " << health_ << "\n";
+        std::cout << " - Mana: " << mana_ << "\n";
+        std::cout << " - Strength: " << strength_ << "\n";
+        std::cout << " - Agility: " << agility_ << "\n";
+        std::cout << " - Intelligence: " << intelligence_ << "\n";
+        std::cout << " - Armor: " << armor_ << "\n";
 
         std::cout << "Equipment:\n";
         for (const auto& item : equipment_) {

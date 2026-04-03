@@ -1,25 +1,22 @@
 #include <iostream>
-
+#include "BuilderDemo.h"
+#include "CharacterDirector.h"
 #include "WarriorBuilder.h"
 #include "MageBuilder.h"
-#include "CharacterDirector.h"
 
 namespace builder_demo {
-
     void run() {
-        std::cout << "===== Builder demo =====\n";
-
         CharacterDirector director;
-
         WarriorBuilder warriorBuilder;
-        Character warrior = director.create(warriorBuilder);
-        warrior.print();
-
         MageBuilder mageBuilder;
-        Character mage = director.create(mageBuilder);
-        mage.print();
 
-        std::cout << "===========================\n\n";
+        Character noviceWarrior = director.createNoviceCharacter(warriorBuilder);
+        Character eliteMage = director.createEliteCharacter(mageBuilder);
+
+        std::cout << "=== Novice Warrior ===\n";
+        noviceWarrior.print();
+
+        std::cout << "\n=== Elite Mage ===\n";
+        eliteMage.print();
     }
-
 }

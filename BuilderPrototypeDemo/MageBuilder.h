@@ -5,16 +5,22 @@
 namespace builder_demo {
     class MageBuilder : public CharacterBuilder {
     public:
-        // Overrided steps for building character characteristics
-        void buildStats() override;
-        void buildEquipment() override;
-        void buildSkills() override;
+        MageBuilder();
 
-        // Returns a fully constructed Character object
+        void reset() override;
+
+        void buildIdentity() override;
+        void buildAttributes() override;
+
+        void buildStarterEquipment() override;
+        void buildAdvancedEquipment() override;
+
+        void buildBasicSkills() override;
+        void buildAdvancedSkills() override;
+
         Character getResult() override;
 
     private:
-        // Internal object that is gradually formed during construction
         Character character_;
     };
 }

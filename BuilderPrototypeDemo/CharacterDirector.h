@@ -5,7 +5,9 @@
 namespace builder_demo {
     class CharacterDirector {
     public:
-        // Controls the character creation process
-        Character create(CharacterBuilder& builder);
+        Character createNoviceCharacter(CharacterBuilder& builder);
+        Character createAdventurerCharacter(CharacterBuilder& builder);
+        Character createEliteCharacter(CharacterBuilder& builder);
+        Character createArenaCharacter(CharacterBuilder& builder);
     };
 }

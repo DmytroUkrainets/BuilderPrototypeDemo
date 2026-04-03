@@ -1,24 +1,54 @@
 #include "MageBuilder.h"
 
 namespace builder_demo {
-    // Forms the basic characteristics of the magician
-    void MageBuilder::buildStats() {
-        character_.setHealth(100);
+    MageBuilder::MageBuilder() {
+        reset();
     }
 
-    // Adds equipment specific to the mage
-    void MageBuilder::buildEquipment() {
-        character_.addEquipment("Staff");
+    void MageBuilder::reset() {
+        character_ = Character{};
     }
 
-    // Adds magical abilities to the character
-    void MageBuilder::buildSkills() {
+    void MageBuilder::buildIdentity() {
+        character_.setName("Elira");
+        character_.setClassType("Mage");
+        character_.setLevel(10);
+    }
+
+    void MageBuilder::buildAttributes() {
+        character_.setHealth(90);
+        character_.setMana(250);
+        character_.setStrength(4);
+        character_.setAgility(9);
+        character_.setIntelligence(20);
+        character_.setArmor(3);
+    }
+
+    void MageBuilder::buildStarterEquipment() {
+        character_.addEquipment("Wooden Staff");
+        character_.addEquipment("Apprentice Robe");
+    }
+
+    void MageBuilder::buildAdvancedEquipment() {
+        character_.addEquipment("Magic Staff");
+        character_.addEquipment("Spellbook");
+        character_.addEquipment("Enchanted Robe");
+    }
+
+    void MageBuilder::buildBasicSkills() {
+        character_.addSkill("Spark");
+        character_.addSkill("Mana Shield");
+    }
+
+    void MageBuilder::buildAdvancedSkills() {
         character_.addSkill("Fireball");
         character_.addSkill("Teleport");
+        character_.addSkill("Arcane Blast");
     }
 
-    // Returns a fully constructed Character object
     Character MageBuilder::getResult() {
-        return character_;
+        Character result = character_;
+        reset();
+        return result;
     }
 }

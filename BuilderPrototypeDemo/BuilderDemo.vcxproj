@@ -136,6 +136,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BuilderDemo.h" />
+    <ClInclude Include="Builder\BuilderDemo.h" />
+    <ClInclude Include="Builder\Character.h" />
+    <ClInclude Include="Builder\CharacterBuilder.h" />
+    <ClInclude Include="Builder\CharacterDirector.h" />
+    <ClInclude Include="Builder\MageBuilder.h" />
+    <ClInclude Include="Builder\WarriorBuilder.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="CharacterBuilder.h" />
     <ClInclude Include="CharacterDirector.h" />

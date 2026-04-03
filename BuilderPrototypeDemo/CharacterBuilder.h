@@ -5,15 +5,19 @@
 namespace builder_demo {
     class CharacterBuilder {
     public:
-        // Virtual destructor
         virtual ~CharacterBuilder() = default;
 
-        // Steps for building character characteristics
-        virtual void buildStats() = 0;
-        virtual void buildEquipment() = 0;
-        virtual void buildSkills() = 0;
+        virtual void reset() = 0;
 
-        // Returns a fully constructed Character object
+        virtual void buildIdentity() = 0;
+        virtual void buildAttributes() = 0;
+
+        virtual void buildStarterEquipment() = 0;
+        virtual void buildAdvancedEquipment() = 0;
+
+        virtual void buildBasicSkills() = 0;
+        virtual void buildAdvancedSkills() = 0;
+
         virtual Character getResult() = 0;
     };
 }
