@@ -25,9 +25,6 @@
     <Filter Include="builder_demo\product">
       <UniqueIdentifier>{a44a660c-0ec2-471e-8937-175d23774b8c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="builder_demo\preset">
-      <UniqueIdentifier>{338a7ca2-5cdf-45fe-9304-b20fba32a6eb}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BuilderPrototypeDemo.cpp">
@@ -47,9 +44,6 @@
     </ClCompile>
     <ClCompile Include="Troll.cpp">
       <Filter>prototype_demo</Filter>
-    </ClCompile>
-    <ClCompile Include="CharacterPresets.cpp">
-      <Filter>builder_demo\preset</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -91,9 +85,6 @@
     </ClInclude>
     <ClInclude Include="Builder\WarriorBuilder.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CharacterPresets.h">
-      <Filter>builder_demo\preset</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

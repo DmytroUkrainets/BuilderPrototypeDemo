@@ -1,7 +1,6 @@
 #include <iostream>
 #include "BuilderDemo.h"
 #include "CharacterBuilder.h"
-#include "CharacterPresets.h"
 
 namespace builder_demo {
     void run() {
@@ -9,9 +8,9 @@ namespace builder_demo {
         //    .setClass(CharacterClass::Warrior)
         //    .build();
 
-        Character warrior = presets::warrior().build();
+        Character warrior = CharacterBuilder<>::warrior().build();
 
-        Character customMage = presets::mage()
+        Character customMage = CharacterBuilder<>::mage()
             .setName("Aeris")
             .setLevel(12)
             .addSkill("Ice Storm")
