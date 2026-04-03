@@ -5,20 +5,17 @@
 
 namespace prototype_demo {
 
-    class Orc : public Enemy {
+    class Orc final : public PrototypeCRTP<Orc, Enemy> {
     public:
-        // Constructor that disallows implicit type conversions
-        explicit Orc(int strength);
+        explicit Orc(int strength, std::string weapon = "axe");
 
-        // Returns a polymorphic copy of the current object
-        std::unique_ptr<Enemy> clone() const override;
-
-        // Implementing the orc attack behavior
         void attack() const override;
 
+        void berserkStrike() const;
+
     private:
-        // Orc characteristic that determines attack power
         int strength_;
+        std::string weapon_;
     };
 
 }

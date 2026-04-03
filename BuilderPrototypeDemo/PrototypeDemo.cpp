@@ -7,27 +7,31 @@
 namespace prototype_demo {
 
     void run() {
-        std::cout << "===== Prototype demo =====\n";
+        std::cout << "===== Advanced Prototype demo =====\n";
 
-        std::unique_ptr<Enemy> orcPrototype =
-            std::make_unique<Orc>(10);
+        Orc orcPrototype(10, "hammer");
+        Troll trollPrototype(50, 8);
 
-        std::unique_ptr<Enemy> trollPrototype =
-            std::make_unique<Troll>(50);
+        // 1. Typed cloning
+        auto typedOrc = orcPrototype.cloneTyped();
+        auto typedTroll = trollPrototype.cloneTyped();
 
-        auto orc1 = orcPrototype->clone();
-        auto orc2 = orcPrototype->clone();
+        typedOrc->attack();
+        typedOrc->berserkStrike();
 
-        auto troll1 = trollPrototype->clone();
-        auto troll2 = trollPrototype->clone();
+        typedTroll->attack();
+        typedTroll->regenerate();
 
-        orc1->attack();
-        orc2->attack();
+        std::cout << "\n";
 
-        troll1->attack();
-        troll2->attack();
+        // 2. Polymorphic cloning
+        std::unique_ptr<Enemy> enemy1 = orcPrototype.clone();
+        std::unique_ptr<Enemy> enemy2 = trollPrototype.clone();
 
-        std::cout << "===========================\n\n";
+        enemy1->attack();
+        enemy2->attack();
+
+        std::cout << "===================================\n\n";
     }
 
 }

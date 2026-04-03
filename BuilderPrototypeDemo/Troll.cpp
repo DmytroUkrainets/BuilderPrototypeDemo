@@ -3,20 +3,19 @@
 
 namespace prototype_demo {
 
-    // Constructor that initializes the internal state of the object
-    Troll::Troll(int armor)
-        : armor_(armor) {
+    Troll::Troll(int armor, int regeneration)
+        : armor_(armor), regeneration_(regeneration) {
     }
 
-    // Creates a polymorphic copy of the current object
-    std::unique_ptr<Enemy> Troll::clone() const {
-        return std::make_unique<Troll>(*this);
-    }
-
-    // Implementing the troll attack behavior
     void Troll::attack() const {
         std::cout << "Troll attacks with armor "
-            << armor_ << "\n";
+            << armor_ << " and regeneration "
+            << regeneration_ << "\n";
+    }
+
+    void Troll::regenerate() const {
+        std::cout << "Troll regenerates "
+            << regeneration_ << " health points\n";
     }
 
 }

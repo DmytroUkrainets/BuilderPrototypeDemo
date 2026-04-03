@@ -6,14 +6,28 @@ namespace prototype_demo {
 
     class Enemy {
     public:
-        // Virtual destructor
         virtual ~Enemy() = default;
 
-        // Creates a polymorphic copy of the object (Prototype)
         virtual std::unique_ptr<Enemy> clone() const = 0;
 
-        // Abstract method of enemy behavior
         virtual void attack() const = 0;
+    };
+
+    template<typename Derived, typename Base>
+    class PrototypeCRTP : public Base {
+    public:
+        std::unique_ptr<Base> clone() const override {
+            return std::make_unique<Derived>(self());
+        }
+
+        std::unique_ptr<Derived> cloneTyped() const {
+            return std::make_unique<Derived>(self());
+        }
+
+    protected:
+        const Derived& self() const {
+            return static_cast<const Derived&>(*this);
+        }
     };
 
 }

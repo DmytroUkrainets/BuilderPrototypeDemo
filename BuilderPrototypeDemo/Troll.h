@@ -4,20 +4,17 @@
 
 namespace prototype_demo {
 
-    class Troll : public Enemy {
+    class Troll final : public PrototypeCRTP<Troll, Enemy> {
     public:
-        // Constructor that disallows implicit type conversions
-        explicit Troll(int armor);
+        explicit Troll(int armor, int regeneration);
 
-        // Returns a polymorphic copy of the current object
-        std::unique_ptr<Enemy> clone() const override;
-        
-        // Implementing the orc attack behavior
         void attack() const override;
 
+        void regenerate() const;
+
     private:
-        // Troll characteristic that determines armor level
         int armor_;
+        int regeneration_;
     };
 
 }
