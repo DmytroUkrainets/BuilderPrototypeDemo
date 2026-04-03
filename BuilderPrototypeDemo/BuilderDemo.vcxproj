@@ -129,7 +129,6 @@
     <ClCompile Include="BuilderPrototypeDemo.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="BuilderDemo.cpp" />
-    <ClCompile Include="CharacterBuilder.cpp" />
     <ClCompile Include="CharacterPresets.cpp" />
     <ClCompile Include="Orc.cpp" />
     <ClCompile Include="PrototypeDemo.cpp" />

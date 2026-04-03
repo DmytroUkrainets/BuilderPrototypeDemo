@@ -48,9 +48,6 @@
     <ClCompile Include="Troll.cpp">
       <Filter>prototype_demo</Filter>
     </ClCompile>
-    <ClCompile Include="CharacterBuilder.cpp">
-      <Filter>builder_demo\builder</Filter>
-    </ClCompile>
     <ClCompile Include="CharacterPresets.cpp">
       <Filter>builder_demo\preset</Filter>
     </ClCompile>

@@ -1,19 +1,35 @@
 #include "Character.h"
 #include <iostream>
+#include <string>
 
 namespace builder_demo {
+    namespace {
+        std::string toString(CharacterClass characterClass) {
+            switch (characterClass) {
+            case CharacterClass::Warrior:
+                return "Warrior";
+            case CharacterClass::Mage:
+                return "Mage";
+            case CharacterClass::Rogue:
+                return "Rogue";
+            default:
+                return "Unknown";
+            }
+        }
+    }
+
     void Character::print() const {
         std::cout << "Name: " << name_ << "\n";
-        std::cout << "Class: " << classType_ << "\n";
+        std::cout << "Class: " << toString(characterClass_) << "\n";
         std::cout << "Level: " << level_ << "\n";
 
         std::cout << "Attributes:\n";
-        std::cout << " - Health: " << health_ << "\n";
-        std::cout << " - Mana: " << mana_ << "\n";
-        std::cout << " - Strength: " << strength_ << "\n";
-        std::cout << " - Agility: " << agility_ << "\n";
-        std::cout << " - Intelligence: " << intelligence_ << "\n";
-        std::cout << " - Armor: " << armor_ << "\n";
+        std::cout << " - Health: " << stats_.health << "\n";
+        std::cout << " - Mana: " << stats_.mana << "\n";
+        std::cout << " - Strength: " << stats_.strength << "\n";
+        std::cout << " - Agility: " << stats_.agility << "\n";
+        std::cout << " - Intelligence: " << stats_.intelligence << "\n";
+        std::cout << " - Armor: " << stats_.armor << "\n";
 
         std::cout << "Equipment:\n";
         for (const auto& item : equipment_) {

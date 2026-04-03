@@ -5,6 +5,10 @@
 
 namespace builder_demo {
     void run() {
+        // Character warriorCompileError = CharacterBuilder{}
+        //    .setClass(CharacterClass::Warrior)
+        //    .build();
+
         Character warrior = presets::warrior().build();
 
         Character customMage = presets::mage()
@@ -15,7 +19,7 @@ namespace builder_demo {
 
         Character customRogue = CharacterBuilder{}
             .setName("Valeera")
-            .setClassType("Rogue")
+            .setClass(CharacterClass::Rogue)
             .setLevel(8)
             .setHealth(120)
             .setMana(40)
